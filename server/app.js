@@ -10,10 +10,6 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
 
-app.get('/', (req, res) => {
-
-})
-
 app.post('/', async (req, res) => {
     const { name, year } = req.body
     //const dramaDB = await Drama.find({ $or: [{ name }, { year }] })
@@ -29,7 +25,7 @@ app.post('/', async (req, res) => {
 
 app.delete('/', async (req, res) => {
     const { name, year } = req.body
-    const deletedDrama = await Drama.deleteMany( {name: "Your Lie in April"})
+    const deletedDrama = await Drama.deleteMany( {name: name, year: year})
     if (deletedDrama) {
         console.log("Item/items deleted!")
         res.send(deletedDrama)
