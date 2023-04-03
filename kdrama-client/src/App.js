@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1 className="page-title">Kdrama Storer</h1>
+      <h1 className="page-title">Kdrama Database</h1>
       <Form />
     </div>
   );
